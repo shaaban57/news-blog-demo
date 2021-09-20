@@ -1,33 +1,33 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
-        <div className="container ">
+        <div className="container footer">
             <div className="row mt-5 mb-5">
-                <div className="col-4 ps-5">
+                <div className="col-md-4 col-sm-6 ">
                     <h5>Topics</h5>
                     <ul className="list-unstyled">
-                        <li>FINANCE</li>
-                        <li>NEWS</li>
-                        <li>BUSSINESS</li>
-                        <li>ENTERTAINEMENT</li>
-                        <li>SCIENCE</li>
+                        <li><Link className="nav-link" to="/finance">FINANCE</Link></li>
+                        <li><Link className="nav-link" to="/news">NEWS</Link></li>
+                        <li><Link className="nav-link" to="/business">BUSINESS</Link></li>
+                        <li><Link className="nav-link" to="/entertainment">ENTERTAINMENT</Link></li>
+                        <li><Link className="nav-link" to="/science">SCIENCE</Link></li>
                     </ul>
                 </div>
-                <div className="col-4 ps-5">
+                <div className="col-md-4 col-sm-6 ">
                     <h5>Contact</h5>
                     <ul className="list-unstyled">
-                        <li>Report an article</li>
-                        <li>Contact us</li>
-                        <li>About me</li>
+                        <li><Link className="nav-link" to="/">Report an article</Link></li>
+                        <li><Link className="nav-link" to="/">Contact us</Link></li>
+                        <li><Link className="nav-link" to="/">About me</Link></li>
                     </ul>
                 </div>
-                <div className="col-4 ps-5">
+                <div className="col-md-4 col-sm-6 ">
                     <h5>Follow us</h5>
                     <ul className="list-unstyled">
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>Twitter</li>
+                        <li><Link className="nav-link" to="/">Facebook</Link></li>
+                        <li><Link className="nav-link" to="/">Instagram</Link></li>
+                        <li><Link className="nav-link" to="/">Twitter</Link></li>
                     </ul>
                 </div>
             </div>

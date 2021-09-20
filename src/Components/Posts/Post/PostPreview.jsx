@@ -5,9 +5,10 @@ const PostPreview = ({width,media,title}) => {
         
             <div className={`card  p-1 ${width}`} >
                 <img src={media} className="card-img-top" alt="..."/>
-                <div className="card-body d-flex flex-column justify-content-between">
-                    <p className="card-text">{title}</p>
-                    <button className="btn btn-myprimary">Read more</button>
+                <div className="card-body">
+                    <div className="card-title">
+                        <p className="card-text">{title}</p>
+                    </div>
                 </div>
             </div>
         

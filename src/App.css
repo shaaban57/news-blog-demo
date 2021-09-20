@@ -21,3 +21,12 @@
   height: 30px;
   top: 5px;
 }
+/*      post preview   */
+.card-title{
+  height: 53px;
+  overflow: hidden;
+}
+/*      footer         */
+.footer{
+  font-size: 15px;
+}

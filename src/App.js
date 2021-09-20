@@ -7,12 +7,16 @@ import Latest from "./Components/Latest/Latest";
 import Homepage from "./Components/Posts/Homepage";
 import FinancePrev from "./Components/Posts/FinancePrev";
 import NewsPrev from "./Components/Posts/NewsPrev"
-import BussinessPrev from "./Components/Posts/BussinessPrev";
+import BusinessPrev from "./Components/Posts/BusinessPrev";
 import EntertainmentPrev from "./Components/Posts/EntertainmentPrev";
 import SciencePrev from "./Components/Posts/SciencePrev";
 import Footer from "./Components/Footer";
 import FinancePage from "./Components/FinancePage"
-
+import BusinessPage from "./Components/BusinessPage"
+import NewsPage from "./Components/NewsPage"
+import EntertainmentPage from "./Components/EntertainmentPage"
+import SciencePage from "./Components/SciencePage"
+import ScrollToTop from "./Components/scrollToTop";
 
 function App() {
   
@@ -42,6 +46,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="container">
         <NavBar />
         <Switch>
@@ -51,26 +56,26 @@ function App() {
               <Homepage news={news}/>
               <FinancePrev news={news}/>
               <NewsPrev news={news}/>
-              <BussinessPrev news={news}/>
+              <BusinessPrev news={news}/>
               <EntertainmentPrev news={news}/>
               <SciencePrev news={news}/>
               <Latest news={news}/>
               
           </Route>
           <Route exact path='/news'>
-            
+            <NewsPage news={news}/>
           </Route>
           <Route exact path="/finance">
-              <FinancePage news={news}/>
+            <FinancePage news={news}/>
           </Route>
           <Route exact path="/business">
-              
+            <BusinessPage news={news}/>
           </Route>
           <Route exact path="/entertainment">
-              
+            <EntertainmentPage news={news}/>
           </Route>
           <Route exact path="/science">
-              
+            <SciencePage news={news}/>
           </Route>
         </Switch>
         <Footer/>
