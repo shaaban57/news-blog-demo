@@ -1,12 +1,17 @@
 import React ,{useState,useEffect}from "react";
 import "./App.css"
+import { HashRouter as Router, Route ,Switch} from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
 import Header from "./Components/Header";
 import Latest from "./Components/Latest/Latest";
 import Homepage from "./Components/Posts/Homepage";
 import FinancePrev from "./Components/Posts/FinancePrev";
-
-import { HashRouter as Router, Route ,Switch} from "react-router-dom";
+import NewsPrev from "./Components/Posts/NewsPrev"
+import BussinessPrev from "./Components/Posts/BussinessPrev";
+import EntertainmentPrev from "./Components/Posts/EntertainmentPrev";
+import SciencePrev from "./Components/Posts/SciencePrev";
+import Footer from "./Components/Footer";
+import FinancePage from "./Components/FinancePage"
 
 
 function App() {
@@ -40,33 +45,35 @@ function App() {
       <div className="container">
         <NavBar />
         <Switch>
-                      <Route exact path='/'>
-                          <Header />
-                          <Latest news={news}/>
-                          <Homepage news={news}/>
-                          <FinancePrev news={news}/>
-                          {/* <NewsPrev news={news}/>
-                          <BussinessPrev news={news}/>
-                          <EntertainmentPrev news={news}/>
-                          <SciencePrev news={news}/> */}
-                      </Route>
-                      <Route exact path='/news'>
-                        
-                      </Route>
-                      <Route exact path="/finance">
-                          
-                      </Route>
-                      <Route exact path="/business">
-                          
-                      </Route>
-                      <Route exact path="/entertainment">
-                          
-                      </Route>
-                      <Route exact path="/science">
-                          
-                      </Route>
-                  </Switch>
-        
+          <Route exact path='/'>
+              <Header />
+              <Latest news={news}/>
+              <Homepage news={news}/>
+              <FinancePrev news={news}/>
+              <NewsPrev news={news}/>
+              <BussinessPrev news={news}/>
+              <EntertainmentPrev news={news}/>
+              <SciencePrev news={news}/>
+              <Latest news={news}/>
+              
+          </Route>
+          <Route exact path='/news'>
+            
+          </Route>
+          <Route exact path="/finance">
+              <FinancePage news={news}/>
+          </Route>
+          <Route exact path="/business">
+              
+          </Route>
+          <Route exact path="/entertainment">
+              
+          </Route>
+          <Route exact path="/science">
+              
+          </Route>
+        </Switch>
+        <Footer/>
       </div>
     </Router>
   );

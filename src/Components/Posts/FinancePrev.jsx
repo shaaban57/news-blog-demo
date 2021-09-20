@@ -11,10 +11,10 @@ const FinancePrev =({news}) => {
             }
             i++;
         }
-        console.log(finArticles);
+        
         return(
             <div>
-                <div className=" mt-3">
+                <div className=" mt-5">
                     <div className="latest col-sm-12 ps-2 d-flex align-items-center">FINANCE</div>
                 </div>
                 <div className="container mt-3">
