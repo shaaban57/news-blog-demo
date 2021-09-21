@@ -17,10 +17,14 @@ import NewsPage from "./Components/NewsPage"
 import EntertainmentPage from "./Components/EntertainmentPage"
 import SciencePage from "./Components/SciencePage"
 import ScrollToTop from "./Components/scrollToTop";
+import Post from "./Components/Posts/Post/Post";
+
+
 
 function App() {
   
   const [news, setnews] = useState({});
+  const [articleId, setarticleId] = useState("");
 
   const fetchData= async ()=> {
     const respons =    await fetch("https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en", {
@@ -34,11 +38,16 @@ function App() {
     setnews(data);
     
     console.log(data);
+
     
-    // console.log(data.articles[0].title);
   
   
+  };
+  const handlePrevClick=(id)=>{
+    setarticleId(id);
+    
   }
+  
 
   useEffect(() => {
     fetchData();
@@ -53,12 +62,12 @@ function App() {
           <Route exact path='/'>
               <Header />
               <Latest news={news}/>
-              <Homepage news={news}/>
-              <FinancePrev news={news}/>
-              <NewsPrev news={news}/>
-              <BusinessPrev news={news}/>
-              <EntertainmentPrev news={news}/>
-              <SciencePrev news={news}/>
+              <Homepage handlePrevClick={handlePrevClick} news={news}/>
+              <FinancePrev handlePrevClick={handlePrevClick} news={news}/>
+              <NewsPrev handlePrevClick={handlePrevClick} news={news}/>
+              <BusinessPrev handlePrevClick={handlePrevClick} news={news}/>
+              <EntertainmentPrev handlePrevClick={handlePrevClick} news={news}/>
+              <SciencePrev handlePrevClick={handlePrevClick} news={news}/>
               <Latest news={news}/>
               
           </Route>
@@ -76,6 +85,9 @@ function App() {
           </Route>
           <Route exact path="/science">
             <SciencePage news={news}/>
+          </Route>
+          <Route exact path="/post">
+            <Post id={articleId} news={news}/>
           </Route>
         </Switch>
         <Footer/>

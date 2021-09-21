@@ -1,6 +1,6 @@
 import React from 'react'
 import PostPreview from './Post/PostPreview'
-const EntertainmentPrev =({news}) => {
+const EntertainmentPrev =({news,handlePrevClick}) => {
     if(news.articles){
         let entArticles=[];
         let i=0;
@@ -22,12 +22,12 @@ const EntertainmentPrev =({news}) => {
                     <div className="row ">
                         <div className="col">
                         <div className="row">
-                        {entArticles.length>=1?<PostPreview width="col-md-6 col-sm-12" media={entArticles[0].media} title={entArticles[0].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                        {entArticles.length>=2?<PostPreview width="col-md-6 col-sm-12" media={entArticles[1].media} title={entArticles[1].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {entArticles.length>=1?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={entArticles[0]._id} media={entArticles[0].media} title={entArticles[0].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {entArticles.length>=2?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={entArticles[1]._id} media={entArticles[1].media} title={entArticles[1].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                         </div>
                         </div>
                         <div className="col">
-                        {entArticles.length===3?<PostPreview width="col-md-12 col-sm-12" media={entArticles[2].media} title={entArticles[2].title}/>:<PostPreview width="col-md-12 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {entArticles.length===3?<PostPreview width="col-md-12 col-sm-12" handlePrevClick={handlePrevClick} id={entArticles[2]._id} media={entArticles[2].media} title={entArticles[2].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-12 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import PostPreview from './Post/PostPreview'
-const BusinessPrev =({news}) => {
+const BusinessPrev =({news,handlePrevClick}) => {
     if(news.articles){
         let bussArticles=[];
         let i=0;
@@ -21,16 +21,16 @@ const BusinessPrev =({news}) => {
                 
                     <div className="row ">
                         <div className="col">
-                            {bussArticles.length>=1?<PostPreview width="col-md-12 col-sm-12" media={bussArticles[0].media} title={bussArticles[0].title}/>:<PostPreview width="col-md-12 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                            {bussArticles.length>=1?<PostPreview width="col-md-12 col-sm-12" handlePrevClick={handlePrevClick} id={bussArticles[0]._id} media={bussArticles[0].media} title={bussArticles[0].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-12 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                         </div>
                         <div className="col">
                             <div className="row">
-                                {bussArticles.length>=2?<PostPreview width="col-md-6 col-sm-12" media={bussArticles[1].media} title={bussArticles[1].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                                {bussArticles.length===3?<PostPreview width="col-md-6 col-sm-12" media={bussArticles[2].media} title={bussArticles[2].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                                {bussArticles.length>=2?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={bussArticles[1]._id} media={bussArticles[1].media} title={bussArticles[1].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                                {bussArticles.length===3?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={bussArticles[2]._id} media={bussArticles[2].media} title={bussArticles[2].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                             </div>
                             <div className="row">
-                                {bussArticles.length>=4?<PostPreview width="col-md-6 col-sm-12" media={bussArticles[3].media} title={bussArticles[3].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                                {bussArticles.length===5?<PostPreview width="col-md-6 col-sm-12" media={bussArticles[4].media} title={bussArticles[4].title}/>:<PostPreview width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                                {bussArticles.length>=4?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={bussArticles[3]._id} media={bussArticles[3].media} title={bussArticles[3].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                                {bussArticles.length===5?<PostPreview width="col-md-6 col-sm-12" handlePrevClick={handlePrevClick} id={bussArticles[4]._id} media={bussArticles[4].media} title={bussArticles[4].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-6 col-sm-12" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                             </div>
                         </div>
                         
