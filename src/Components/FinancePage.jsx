@@ -1,6 +1,6 @@
 import React from 'react'
 import PostPreview from './Posts/Post/PostPreview';
-const FinancePage =({news}) => {
+const FinancePage =({news,handlePrevClick}) => {
     if(news.articles){
         let finArticles=[];
         let i=0;
@@ -21,8 +21,8 @@ const FinancePage =({news}) => {
                 
                     <div className="row ">
                         {finArticles.length>=1?
-                        finArticles.map((article)=>(<PostPreview width="col-md-3 col-sm-6" media={article.media} title={article.title}/>))
-                        :<PostPreview width="col-md-3 col-sm-6" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        finArticles.map((article)=>(<PostPreview handlePrevClick={handlePrevClick} id={article._id} width="col-md-3 col-sm-6" media={article.media} title={article.title}/>))
+                        :<PostPreview handlePrevClick={handlePrevClick} id={"demo"} width="col-md-3 col-sm-6" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                         </div>
                 </div>
             </div>

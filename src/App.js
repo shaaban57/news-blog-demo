@@ -72,19 +72,19 @@ function App() {
               
           </Route>
           <Route exact path='/news'>
-            <NewsPage news={news}/>
+            <NewsPage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
           <Route exact path="/finance">
-            <FinancePage news={news}/>
+            <FinancePage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
           <Route exact path="/business">
-            <BusinessPage news={news}/>
+            <BusinessPage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
           <Route exact path="/entertainment">
-            <EntertainmentPage news={news}/>
+            <EntertainmentPage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
           <Route exact path="/science">
-            <SciencePage news={news}/>
+            <SciencePage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
           <Route exact path="/post">
             <Post id={articleId} news={news}/>
