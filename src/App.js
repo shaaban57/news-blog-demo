@@ -61,14 +61,14 @@ function App() {
         <Switch>
           <Route exact path='/'>
               <Header />
-              <Latest news={news}/>
+              <Latest handlePrevClick={handlePrevClick} news={news}/>
               <Homepage handlePrevClick={handlePrevClick} news={news}/>
               <FinancePrev handlePrevClick={handlePrevClick} news={news}/>
               <NewsPrev handlePrevClick={handlePrevClick} news={news}/>
               <BusinessPrev handlePrevClick={handlePrevClick} news={news}/>
               <EntertainmentPrev handlePrevClick={handlePrevClick} news={news}/>
               <SciencePrev handlePrevClick={handlePrevClick} news={news}/>
-              <Latest news={news}/>
+              <Latest handlePrevClick={handlePrevClick} news={news}/>
               
           </Route>
           <Route exact path='/news'>

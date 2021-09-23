@@ -1,6 +1,6 @@
 import React from 'react'
-
-const Latest = ({news}) => {
+import { Link } from 'react-router-dom'
+const Latest = ({news,handlePrevClick}) => {
     if(news.articles){
     return (
         <div className="container pt-2">
@@ -11,19 +11,22 @@ const Latest = ({news}) => {
                     <div id="latestCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
                         <div className="carousel-inner" >
                         
-                            <div className="carousel-item active ">
+                            <div className="carousel-item active " onClick={()=>{handlePrevClick(news.articles[12]._id)}}>
+                            <Link className="text-decoration-none" to="/post">
                                 {news.articles[12].title}
+                                </Link>
                             </div>
                             
                         {news.articles.map((article)=>{return(
-                            <div className="carousel-item ">
+                            <div className="carousel-item " onClick={()=>{handlePrevClick(article._id)}}>
+                                <Link className="text-decoration-none" to="/post">
                                 {article.title}
+                                </Link>
                             </div>
                             )})}
                         </div>
                     </div>
                 
-                    {/* {console.log(news.articles)} */}
                 </div>
             </div>
         </div>
