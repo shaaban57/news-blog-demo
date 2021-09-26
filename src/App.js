@@ -86,9 +86,16 @@ function App() {
           <Route exact path="/science">
             <SciencePage handlePrevClick={handlePrevClick} news={news}/>
           </Route>
-          <Route exact path="/post">
-            <Post id={articleId} news={news}/>
+          <Route exact path="/demo">
+            <Post id="demo" news={news} handlePrevClick={handlePrevClick}/>
           </Route>
+          {news.articles?
+          news.articles.map((article)=>{return(<Route exact path={`/${article._id}`}>
+            <Post id={article._id} news={news} handlePrevClick={handlePrevClick}/>
+          </Route>)})
+          :<></>  
+        }
+          
         </Switch>
         <Footer/>
       </div>

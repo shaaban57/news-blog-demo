@@ -8,7 +8,7 @@ const Latest = ({news,handlePrevClick}) => {
                 <div className="latest col-sm-12 col-md-1 d-flex align-items-center">LATEST</div>
                 <div className="latest-titles col-sm-12 col-md-11 d-flex align-items-center">
                 
-                    <div id="latestCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                    <div id="latestCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
                         <div className="carousel-inner" >
                         
                             <div className="carousel-item active " onClick={()=>{handlePrevClick(news.articles[12]._id)}}>
