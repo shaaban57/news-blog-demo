@@ -18,14 +18,12 @@ import EntertainmentPage from "./Components/EntertainmentPage"
 import SciencePage from "./Components/SciencePage"
 import ScrollToTop from "./Components/scrollToTop";
 import Post from "./Components/Posts/Post/Post";
-
+import ContentLoader from 'react-content-loader'
 
 
 function App() {
-  
   const [news, setnews] = useState({});
-  const [articleId, setarticleId] = useState("");
-
+const [loading, setloading] = useState(true)
   const fetchData= async ()=> {
     const respons =    await fetch("https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en", {
       "method": "GET",
@@ -36,17 +34,19 @@ function App() {
     })
     const data= await respons.json();
     setnews(data);
+    setloading(false);
     
-    console.log(data);
-
     
-  
-  
   };
-  const handlePrevClick=(id)=>{
-    setarticleId(id);
-    
-  }
+  const MyLoader = () => (<div className="p-1">
+    <ContentLoader animate={false}  viewBox="0 0 380 280">
+       
+      <rect x="20" y="20" rx="15" ry="15" width="340" height="140" />
+      <rect x="20" y="180" rx="14" ry="14" width="340" height="40" />
+      <rect x="20" y="240" rx="13" ry="13" width="340" height="40" />
+    </ContentLoader>
+    </div>
+  )
   
 
   useEffect(() => {
@@ -60,38 +60,50 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/'>
+              <div className="mt-5"></div>
               <Header />
-              <Latest handlePrevClick={handlePrevClick} news={news}/>
-              <Homepage handlePrevClick={handlePrevClick} news={news}/>
-              <FinancePrev handlePrevClick={handlePrevClick} news={news}/>
-              <NewsPrev handlePrevClick={handlePrevClick} news={news}/>
-              <BusinessPrev handlePrevClick={handlePrevClick} news={news}/>
-              <EntertainmentPrev handlePrevClick={handlePrevClick} news={news}/>
-              <SciencePrev handlePrevClick={handlePrevClick} news={news}/>
-              <Latest handlePrevClick={handlePrevClick} news={news}/>
+              {loading?
+              <div className="row">
+                <div className="col-sm-8 col-md-6 p-2"><MyLoader /></div>
+                <div className="col-sm-4 col-md-3 p-2"><MyLoader /></div>
+                <div className="col-sm-4 col-md-3 p-2"><MyLoader /></div>
+                <div className="col-sm-8 col-md-3 p-2"><MyLoader /></div>
+                <div className="col-sm-8 col-md-3 p-2"><MyLoader /></div>
+                <div className="col-sm-4 col-md-6 p-2"><MyLoader /></div>
+              </div>
+              :<div><Latest  news={news}/>
+              <Homepage  news={news}/>
+              <FinancePrev  news={news}/>
+              <NewsPrev  news={news}/>
+              <BusinessPrev  news={news}/>
+              <EntertainmentPrev  news={news}/>
+              <SciencePrev  news={news}/>
+              <Latest  news={news}/>
+              </div>
+              }
               
           </Route>
           <Route exact path='/news'>
-            <NewsPage handlePrevClick={handlePrevClick} news={news}/>
+            <NewsPage  news={news}/>
           </Route>
           <Route exact path="/finance">
-            <FinancePage handlePrevClick={handlePrevClick} news={news}/>
+            <FinancePage  news={news}/>
           </Route>
           <Route exact path="/business">
-            <BusinessPage handlePrevClick={handlePrevClick} news={news}/>
+            <BusinessPage  news={news}/>
           </Route>
           <Route exact path="/entertainment">
-            <EntertainmentPage handlePrevClick={handlePrevClick} news={news}/>
+            <EntertainmentPage  news={news}/>
           </Route>
           <Route exact path="/science">
-            <SciencePage handlePrevClick={handlePrevClick} news={news}/>
+            <SciencePage  news={news}/>
           </Route>
           <Route exact path="/demo">
-            <Post id="demo" news={news} handlePrevClick={handlePrevClick}/>
+            <Post id="demo" news={news} />
           </Route>
           {news.articles?
           news.articles.map((article)=>{return(<Route exact path={`/${article._id}`}>
-            <Post id={article._id} news={news} handlePrevClick={handlePrevClick}/>
+            <Post id={article._id} news={news} />
           </Route>)})
           :<></>  
         }

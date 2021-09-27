@@ -1,6 +1,6 @@
 import React from 'react'
 import PostPreview from './Post/PostPreview'
-const NewsPrev =({news,handlePrevClick}) => {
+const NewsPrev =({news}) => {
     if(news.articles){
         let newArticles=[];
         let i=0;
@@ -20,10 +20,10 @@ const NewsPrev =({news,handlePrevClick}) => {
                 <div className="container mt-3">
                 
                     <div className="row ">
-                        {newArticles.length>=1?<PostPreview width="col-md-3 col-sm-3" handlePrevClick={handlePrevClick} id={newArticles[0]._id} media={newArticles[0].media} title={newArticles[0].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                        {newArticles.length>=2?<PostPreview width="col-md-3 col-sm-3" handlePrevClick={handlePrevClick} id={newArticles[1]._id} media={newArticles[1].media} title={newArticles[1].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                        {newArticles.length>=3?<PostPreview width="col-md-3 col-sm-3" handlePrevClick={handlePrevClick} id={newArticles[2]._id} media={newArticles[2].media} title={newArticles[2].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
-                        {newArticles.length===4?<PostPreview width="col-md-3 col-sm-3" handlePrevClick={handlePrevClick} id={newArticles[3]._id} media={newArticles[3].media} title={newArticles[3].title}/>:<PostPreview handlePrevClick={handlePrevClick} id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {newArticles.length>=1?<PostPreview width="col-md-3 col-sm-3"  id={newArticles[0]._id} media={newArticles[0].media} title={newArticles[0].title}/>:<PostPreview  id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {newArticles.length>=2?<PostPreview width="col-md-3 col-sm-3"  id={newArticles[1]._id} media={newArticles[1].media} title={newArticles[1].title}/>:<PostPreview  id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {newArticles.length>=3?<PostPreview width="col-md-3 col-sm-3"  id={newArticles[2]._id} media={newArticles[2].media} title={newArticles[2].title}/>:<PostPreview  id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
+                        {newArticles.length===4?<PostPreview width="col-md-3 col-sm-3"  id={newArticles[3]._id} media={newArticles[3].media} title={newArticles[3].title}/>:<PostPreview  id="demo" width="col-md-3 col-sm-3" media={"https://truelegends.nl/wp-content/uploads/2020/11/geennieuwsslechtnieuws_kaal.jpg"} title={"this is demo news in case the api didn't feel good today"}/>}
                     </div>
                 </div>
             </div>
