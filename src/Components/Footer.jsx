@@ -17,19 +17,18 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-6 ">
                     <h5>Contact</h5>
                     <ul className="list-unstyled">
-                        <li><Link className="nav-link" to="/">Report an article</Link></li>
-                        <li><Link className="nav-link" to="/">Contact us</Link></li>
-                        <li><Link className="nav-link" to="/">About me</Link></li>
+                        <li><Link className="nav-link" to="/contact-us">Contact us</Link></li>
+                        <li><a className="nav-link" href="https://fb.com/shaaban.altamer" target="_blank" rel="noreferrer">About me</a></li>
                     </ul>
                 </div>
                 <div className="col-md-4 col-sm-6 ">
                     <h5>Follow us</h5>
                     <ul className="list-unstyled">
-                        <li><Link className="nav-link" to="/">Facebook</Link></li>
-                        <li><Link className="nav-link" to="/">Instagram</Link></li>
-                        <li><Link className="nav-link" to="/">Twitter</Link></li>
+                        <li><a className="nav-link" href="https://fb.com" target="_blank" rel="noreferrer">Facebook</a></li>
+                        <li><a className="nav-link" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li><a className="nav-link" href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
                     </ul>
-                </div>
+                </div> 
             </div>
             <div className="row mb-2">
                 <footer className="footer" id="footer">

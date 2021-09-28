@@ -30,3 +30,73 @@
 .footer{
   font-size: 15px;
 }
+/*      contact        */
+.contact {
+  margin-top: 15px;
+}
+
+.contact .cn-card {
+  padding: 12% 20% 12% 20%;
+}
+
+.contact .cn-card .contact-card {
+  background-color: white;
+  border-radius: 7px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.contact .cn-card .contact-card .h2 {
+  margin-top: 35px;
+}
+
+.contact .cn-card .contact-card h3 {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.contact .cn-card .contact-card .cn-form {
+  font-size: 14px;
+}
+
+.contact .cn-card .contact-card .cn-form h3 {
+  margin-bottom: 14px;
+}
+
+.contact .cn-card .contact-card .cn-form i {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.contact .cn-card .contact-card .cn-form input {
+  border-radius: 30px;
+}
+
+.contact .cn-card .contact-card .cn-form textarea {
+  height: 96px;
+  border-radius: 30px;
+  resize: none;
+}
+
+.contact .cn-card .contact-card .cn-form button {
+  background-color: #1a2772;
+}
+
+.contact .cn-card .contact-card .my-info {
+  font-size: 14px;
+  padding-bottom: 20px;
+  padding-left: 80px;
+}
+
+.contact .cn-card .contact-card p {
+  color: black;
+}
+
+@media (max-width: 991px) {
+  .contact .cn-card {
+    padding: 30px 10px 30px 10px;
+  }
+  .contact .cn-card .contact-card .my-info {
+    padding-left: 20px;
+  }
+}

@@ -19,6 +19,7 @@ import SciencePage from "./Components/SciencePage"
 import ScrollToTop from "./Components/scrollToTop";
 import Post from "./Components/Posts/Post/Post";
 import ContentLoader from 'react-content-loader'
+import ContactUs from "./Components/ContactUs";
 
 
 function App() {
@@ -107,7 +108,9 @@ const [loading, setloading] = useState(true)
           </Route>)})
           :<></>  
         }
-          
+          <Route exact path="/contact-us">
+            <ContactUs />
+          </Route>
         </Switch>
         <Footer/>
       </div>

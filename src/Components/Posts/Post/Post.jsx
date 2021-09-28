@@ -48,20 +48,44 @@ const Post = ({id,news}) => {
                     )
         }))}
         const Sugg =({id,news})=>{
+            let firstSugg =news.articles[Math.floor(Math.random()*news.articles.length)];
+            let secondSugg,thirdSugg,fourthSugg;
+                
+                if(news.articles.indexOf(firstSugg)<10)
+                    {
+                    if(firstSugg._id===id){firstSugg=news.articles[news.articles.indexOf(firstSugg)+1];}
+                     secondSugg =news.articles[news.articles.indexOf(firstSugg)+1]
+                     if(secondSugg._id===id){secondSugg=news.articles[news.articles.indexOf(secondSugg)+1];}
+                     thirdSugg =news.articles[news.articles.indexOf(secondSugg)+1]
+                     if(thirdSugg._id===id){thirdSugg=news.articles[news.articles.indexOf(thirdSugg)+1];}
+                     fourthSugg =news.articles[news.articles.indexOf(thirdSugg)+1]
+                     if(fourthSugg._id===id){fourthSugg=news.articles[news.articles.indexOf(fourthSugg)+1];}
+                    }  
+                    else{
+                    if(firstSugg._id===id){firstSugg=news.articles[news.articles.indexOf(firstSugg)-1];}
+                    secondSugg =news.articles[news.articles.indexOf(firstSugg)-1]
+                    if(secondSugg._id===id){secondSugg=news.articles[news.articles.indexOf(secondSugg)-1];}
+                    thirdSugg =news.articles[news.articles.indexOf(secondSugg)-1]
+                    if(thirdSugg._id===id){thirdSugg=news.articles[news.articles.indexOf(thirdSugg)-1];}
+                    fourthSugg =news.articles[news.articles.indexOf(thirdSugg)-1]
+                    if(fourthSugg._id===id){fourthSugg=news.articles[news.articles.indexOf(fourthSugg)-1];}
+                    }          
+                
+            
             return(
                 <div className="col-sm-12 col-md-3 p-4">
                     <div className="row  ">
                         <div className="col-sm-6 col-md-12 p-2 card">
-                            <PostPreview  width="col-12 " media={news.articles[7].media} title={news.articles[7].title} id={news.articles[7]._id}/>
+                            <PostPreview  width="col-12 " media={firstSugg.media} title={firstSugg.title} id={firstSugg._id}/>
                         </div>
                         <div className="col-sm-6 col-md-12 p-2 card">
-                            <PostPreview  width="col-12 " media={news.articles[8].media} title={news.articles[8].title} id={news.articles[8]._id}/>
+                            <PostPreview  width="col-12 " media={secondSugg.media} title={secondSugg.title} id={secondSugg._id}/>
                         </div>
                         <div className="col-sm-6 col-md-12 p-2 card">
-                            <PostPreview  width="col-12 " media={news.articles[9].media} title={news.articles[9].title} id={news.articles[9]._id}/>
+                            <PostPreview  width="col-12 " media={thirdSugg.media} title={thirdSugg.title} id={thirdSugg._id}/>
                         </div>
                         <div className="col-sm-6 col-md-12 p-2 card">
-                            <PostPreview  width="col-12 " media={news.articles[10].media} title={news.articles[10].title} id={news.articles[10]._id}/>
+                            <PostPreview  width="col-12 " media={fourthSugg.media} title={fourthSugg.title} id={fourthSugg._id}/>
                         </div>
                     </div>
                 </div>
